@@ -4,40 +4,41 @@ public class SnakeAndLadder
 {
 	public static void main(String[] args)
 	{
-		int Position = 0;
-		//int Position1 = 0;
-		//While((Position<=99)&&(Position1<=99))
-		while(Position <= 99) 
-		{
-		//Scanner Scan = new Scanner( System.in );
-		System.out.println("your position is " +Position);
-		int Dice = (int)Math.floor(Math.random()*10) % 6+1;
-		Position = (Position + Dice);
-		System.out.println("Your Dice Value is : " +Dice);
-		int Check = (int)Math.floor(Math.random() * 10) % 3+1;
-		System.out.println("You Chose Case Number Is: "+Check);
-		switch (Check)  
-		{
-		case 1:
-			//Position = Position + Dice;
-			System.out.println("your Dice Position is : " +Position);
-			break;
-		case 2:
-			Position = (Position - Dice);
-			System.out.println("your Dice Position is : " +Position);
-			break;	
-		case 3:
-			Position = (Position - Dice);
-			if(Position<0)
-			{
-				Position = 0;
-			}
-			System.out.println("Player No Play Stay In The Same Position : "+Position);
-			break;
-			
-		}
+		int count = 0;
+	    int position = 0;
+	    while(position<=99){
+		System.out.println("position is " + position);
+		int dice=(int) (Math.random() * 10) % 6+1;
+		position = (position + dice);
+		count =(count + 1);
+		System.out.println("dice value is " + dice);
+		int check = (int) (Math.random() * 10) % 3+1;
 		
-		}
+		 switch(check) {
+		   case 1:
+		   System.out.println( "No Play You are in the same position" );
+		   break;
+		  
+		   case 2:
+		   position = (position + dice);
+		   if(position>100){
+			   position = (position - dice);
+			   continue;
+		   }
+		   System.out.println( "your position after ladder is :" + position );
+		   break;
+		   
+		   case 3: 
+		   position = (position - dice);
+		  
+		  if(position<0){
+			  position = 0;
+		  }
+			 System.out.println( "Your Position after snake is " + position );
+		   break;
+		  }
+		 }
+		//System.out.println( "Dice play number " + count );
 		
 	}
 	
