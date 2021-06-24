@@ -34,11 +34,11 @@ public class SnakeAndLadder
 		  if(position<0){
 			  position = 0;
 		  }
-			 System.out.println( "Your Position after snake is " + position );
+			 System.out.println( "Your Position after snake is" + position );
 		   break;
 		  }
 		 }
-		//System.out.println( "Dice play number " + count );
+		System.out.println( "Dice play number " + count );
 		
 	}
 	
